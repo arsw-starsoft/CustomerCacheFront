@@ -3,7 +3,7 @@ apiclient = (function () {
 		loginUser: function (datos, succ, err) {
 			$.ajax({
 				type: "POST",
-				url: "http://13.92.247.60:8080/authenticate",
+				url: "https://13.92.247.60:8080/authenticate",
 				contentType: "application/json; charset=utf-8", //importante para el back
 				dataType: 'json',
 				data: datos,
@@ -19,7 +19,7 @@ apiclient = (function () {
 			$.ajax({
 				method: "POST",
 				contentType: "application/json",
-				url: "http://13.92.247.60:8080/users",
+				url: "https://13.92.247.60:8080/users",
 				data: datos,
 				success: succ,
 				error: err
@@ -30,7 +30,7 @@ apiclient = (function () {
 			$.ajax({
 				method: "POST",
 				contentType: "application/json",
-				url: "http://13.92.247.60:8080/drivers",
+				url: "https://13.92.247.60:8080/drivers",
 				data: datos,
 				success: succ,
 				error: err
@@ -42,7 +42,7 @@ apiclient = (function () {
 			$.ajax({
 				method: "GET",
 				contentType: "application/json",
-				url: "http://13.92.247.60:8080/users/" + user,
+				url: "https://13.92.247.60:8080/users/" + user,
 				headers: { "Authorization": token },
 				success: function (respuesta) {
 					console.log(respuesta + " REGRESO ! ")
@@ -61,7 +61,7 @@ apiclient = (function () {
 				method: "PUT",
 				contentType: "application/json; charset=utf-8", //importante para el backs
 				data: datos,
-				url: "http://13.92.247.60:8080/users/" + sessionStorage.getItem('email'),
+				url: "https://13.92.247.60:8080/users/" + sessionStorage.getItem('email'),
 				headers: { "Authorization": sessionStorage.getItem('token') },
 				success: succ,
 				error: err
@@ -74,7 +74,7 @@ apiclient = (function () {
 			$.ajax({
 				method: "GET",
 				contentType: "application/json",
-				url: "http://13.92.247.60:8080/servicios/"+user+"/recordUser",
+				url: "https://13.92.247.60:8080/servicios/"+user+"/recordUser",
 				headers: { "Authorization": token },
 				success: function (respuesta) {
 					callback(respuesta)
@@ -91,7 +91,7 @@ apiclient = (function () {
 			$.ajax({
 				method: "GET",
 				contentType: "application/json",
-				url: "http://13.92.247.60:8080/servicios/"+aplicaciones+"/cheaperService/"+direccion,
+				url: "https://13.92.247.60:8080/servicios/"+aplicaciones+"/cheaperService/"+direccion,
 				headers: { "Authorization": token },
 				success: function (respuesta) {
 					callback(respuesta)
